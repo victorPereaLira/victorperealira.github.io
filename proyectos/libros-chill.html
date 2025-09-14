@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libros & Chill - Proyecto</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html">🏠 Inicio</a>
+      <a href="#about">Sobre el proyecto</a>
+      <a href="#features">Características</a>
+      <a href="#tech">Tecnologías</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="about" class="hero fade-in">
+    <img src="../img/logoLibrosChill.png" alt="Logo Libros & Chill" class="profile-pic">
+    <h1><i class="fa-solid fa-book"></i> Libros & Chill</h1>
+    <p>
+      <span class="highlight-blue">Libros & Chill</span> es una 
+      <span class="highlight-pink">aplicación Android</span> desarrollada para 
+      organizar tu biblioteca personal de forma sencilla y visual.  
+      Con ella nos permite gestionar nuestros libros, añadir nuestra opinion y mantener un registro de nuestras lecturas.
+    </p>
+  </section>
+
+  <!-- Características -->
+  <section id="features" class="content fade-in">
+    <h2>✨ Características principales</h2>
+    <ul>
+      <li>📚 Gestión de libros favorios, leidos y pendientes.</li>
+      <li>📝 Añadir comentarios sobre el libro pudiendo leer los de mas usuarios.</li>
+      <li>🔎 Búsqueda rápida de libros por título o autor.</li>
+      <li>☁️ Integración con <span class="highlight-pink">Firebase</span> para sincronizar datos.</li>
+      <li>☁️ Impementacion de la <span class="highlight-pink">API de Google Books</span> para facilitar la busqueda y añadir libros a nuestra biblioteca.</li>
+      <li>🎨 Interfaz intuitiva y atractiva basada en Material Design.</li>
+    </ul>
+  </section>
+
+  <!-- Tecnologías -->
+  <section id="tech" class="content fade-in">
+    <h2>⚙️ Tecnologías utilizadas</h2>
+    <div class="skills">
+      <span class="tag ts">Kotlin</span>
+      <span class="tag firebase">Firebase</span>
+      <span class="tag react">Material Design</span>
+      <span class="tag astro">API de Libros</span>
+    </div>
+  </section>
+
+  <!-- Enlace a GitHub -->
+  <section class="content fade-in">
+    <h2>🔗 Repositorio</h2>
+    <p>
+      Puedes ver el código completo en mi GitHub:  
+      <a href="https://github.com/tu-usuario/LibrosChill" target="_blank">
+        <i class="fa-brands fa-github"></i> Libros & Chill
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Víctor Perea - Proyecto Libros & Chill</p>
+  </footer>
+
+  <script>
+    // Animación fade-in al hacer scroll
+    const sections = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

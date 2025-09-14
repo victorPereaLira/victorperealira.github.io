@@ -1,0 +1,236 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+
+  /* Fondo desenfocado de programación */
+  background-image: url('./img/fondo.png'); 
+  background-size: cover;  
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Navbar */
+header {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #334155;
+}
+
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+}
+
+/* Textos destacados */
+.highlight-blue {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.highlight-pink {
+  color: #f472b6;
+  font-weight: bold;
+}
+
+/* Secciones */
+.content {
+  padding: 3rem 10%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #38bdf8;
+}
+
+/* Proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #38bdf8;
+  color: #0f172a;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.card a:hover {
+  background: #0ea5e9;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Tags de habilidades */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: #1e293b;
+  color: #fff;
+  border: 1px solid #334155;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.5);
+}
+
+.js { background: #facc15; color: #000; }
+.ts { background: #60a5fa; color: #fff; }
+.astro { background: #f97316; color: #fff; }
+.react { background: #38bdf8; color: #0f172a; }
+.tailwind { background: #14b8a6; color: #fff; }
+.firebase { background: #fbbf24; color: #000; }
+
+/* Mail */
+.mail-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  background: #1e293b;
+  padding: 0.5rem;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.mail-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+.mail-box button {
+  background: #38bdf8;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mail-box button:hover {
+  background: #0ea5e9;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1e293b;
+  margin-top: 2rem;
+}
+.floating-icons {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.floating-icons img {
+  width: 45px;   /* tamaño fijo del icono */
+  height: 45px;  /* tamaño fijo del icono */
+  object-fit: contain; /* ajusta la imagen al tamaño sin deformarla */
+  border-radius: 50%;  /* los hace redondeados */
+  background: #ffffff; /* fondo blanco detrás del icono */
+  padding: 6px;        /* espacio interno */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.floating-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Libros - Proyecto</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html">🏠 Inicio</a>
+      <a href="#about">Sobre el proyecto</a>
+      <a href="#features">Características</a>
+      <a href="#tech">Tecnologías</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="about" class="hero fade-in">
+    <img src="../img/LogoFastLibro.png" alt="Logo Fast Libros" class="profile-pic">
+    <h1><i class="fa-solid fa-database"></i> Fast Libros</h1>
+    <p>
+      <span class="highlight-blue">Fast Libros</span> es una 
+      <span class="highlight-pink">aplicación web</span> desarrollada en Python que permite 
+      <span class="highlight-pink">gestionar tu biblioteca</span> de forma ágil y desde cualquier navegador.  
+      Está pensada para facilitar la organización de colecciones de libros, con una interfaz simple y funcional.  
+    </p>
+  </section>
+
+  <!-- Características -->
+  <section id="features" class="content fade-in">
+    <h2>✨ Características principales</h2>
+    <ul>
+      <li>📂 Registro y gestión de libros con título, autor y categoría.</li>
+      <li>🔎 Búsqueda rápida de libros.</li>
+      <li>🗄️ Base de datos integrada para almacenamiento seguro.</li>
+      <li>🌍 Acceso desde cualquier dispositivo gracias a la interfaz web.</li>
+    </ul>
+  </section>
+
+  <!-- Tecnologías -->
+  <section id="tech" class="content fade-in">
+    <h2>⚙️ Tecnologías utilizadas</h2>
+    <div class="skills">
+      <span class="tag js">Python</span>
+      <span class="tag react">Flask</span>
+      <span class="tag astro">SQL</span>
+      <span class="tag tailwind">HTML & CSS</span>
+    </div>
+  </section>
+
+  <!-- Enlace a GitHub -->
+  <section class="content fade-in">
+    <h2>🔗 Repositorio</h2>
+    <p>
+      Puedes ver el código completo en mi GitHub:  
+      <a href="https://github.com/tu-usuario/FastLibros" target="_blank">
+        <i class="fa-brands fa-github"></i> Fast Libros
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Víctor Perea - Proyecto Fast Libros</p>
+  </footer>
+
+  <script>
+    // Animación fade-in al hacer scroll
+    const sections = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
