@@ -12,9 +12,9 @@
   <header>
     <nav class="navbar">
       <a href="#about">Sobre mí</a>
-      <a href="#social">Social</a>
       <a href="#projects">Proyectos</a>
       <a href="#skills">Habilidades</a>
+      <a href="#contact">Contacto</a>
     </nav>
   </header>
 
@@ -38,7 +38,7 @@
             <img src="./img/LogoFastLibro.png" alt="Foto de perfil" class="profile-pic">
             <h3>Fast Libros</h3>
             <p>Aplicacion web en Python para la gestion de tu biblioteca de forma comoda desde la web</p>
-            <a href="https://github.com/tu-usuario/CurrencyConverter" target="_blank">Ver en GitHub</a>
+            <a href="https://github.com/victorPereaLira/FastLibro" target="_blank">Ver en GitHub</a>
         </a>
       </div>
       <div class="card">
@@ -46,32 +46,50 @@
             <img src="./img/logoLibrosChill.png" alt="Foto de perfil" class="profile-pic">
             <h3>Libros & Chill</h3>
             <p>App Android para gestión de libros tipo biblioteca para tener mas organizado tus lecturas</p>
-            <a href="https://github.com/tu-usuario/LibrosChill" target="_blank">Ver en GitHub</a>
+            <a href="https://github.com/victorPereaLira/libroschill" target="_blank">Ver en GitHub</a>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Habilidades -->
-  <section id="skills" class="content fade-in">
-    <h2>⚡ Habilidades</h2>
-    <div class="skills">
-      <span class="tag js">Java</span>
-      <span class="tag ts">Kotlin</span>
-      <span class="tag astro">SQL</span>
-      <span class="tag react">React</span>
-      <span class="tag tailwind">Spring</span>
-      <span class="tag firebase">Firebase</span>
-    </div>
-  </section>
+<section id="tech" class="content fade-in">
+  <h2>⚙️ Tecnologías utilizadas</h2>
+  <div class="tech-tags">
+    <span class="tag html">HTML</span>
+    <span class="tag css">CSS</span>
+    <span class="tag java">Java</span>
+    <span class="tag spring">Spring Boot</span>
+    <span class="tag node">Node.js</span>
+    <span class="tag firebase">Firebase</span>
+    <span class="tag git">Git</span>
+    <span class="tag python">Python</span>
+    <span class="tag jpa">JPA</span>
+    <span class="tag mysql">MySQL</span>
+  </div>
+</section>
 
   <!-- Contacto -->
   <section id="contact" class="content fade-in">
-    <h2>📧 Mail</h2>
-    <div class="mail-box">
-      <input type="text" value="victorperealira99@gmail.com" readonly>
-      <button onclick="copyMail()"><i class="fa-solid fa-copy"></i></button>
-    </div>
+  <h2>📧 Contacto</h2>
+  <div class="mail-box">
+  <input type="text" value="victorperealira99@gmail.com" readonly>
+
+  <!-- Botón copiar -->
+  <button onclick="copyMail()" title="Copiar correo">
+    <i class="fa-solid fa-copy"></i>
+  </button>
+
+  <!-- Botón enviar -->
+  <a href="mailto:victorperealira99@gmail.com" class="btn-mail" title="Enviar correo">
+    <i class="fa-solid fa-paper-plane"></i>
+  </a>
+</div>
+
+  <!-- Mensaje de confirmación -->
+  <p id="copy-msg" style="text-align:center; color: #4caf50; display:none;">
+    ✅ Correo copiado al portapapeles
+  </p>
   </section>
 
   <footer>

@@ -137,10 +137,12 @@ h2 {
 }
 
 /* Tags de habilidades */
-.skills {
+.skills, .tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center; /* centra los tags */
+  margin-top: 1rem;
 }
 
 .tag {
@@ -148,23 +150,30 @@ h2 {
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  background: #1e293b;
   color: #fff;
   border: 1px solid #334155;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  cursor: default;
 }
 
+/* Hover genérico */
 .tag:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.5);
+  filter: brightness(1.1);
 }
 
-.js { background: #facc15; color: #000; }
-.ts { background: #60a5fa; color: #fff; }
-.astro { background: #f97316; color: #fff; }
-.react { background: #38bdf8; color: #0f172a; }
-.tailwind { background: #14b8a6; color: #fff; }
-.firebase { background: #fbbf24; color: #000; }
+/* Colores individuales */
+.tag.html { background-color: #e34c26; }
+.tag.css { background-color: #264de4; }
+.tag.java { background-color: #f89820; }
+.tag.spring { background-color: #6db33f; }
+.tag.node { background-color: #68a063; }
+.tag.firebase { background-color: #ffca28; color: #000; }
+.tag.git { background-color: #f1502f; }
+.tag.python { background-color: #306998; }
+.tag.jpa { background-color: #007396; }
+.tag.mysql { background-color: #00758f; }
 
 /* Mail */
 .mail-box {
@@ -234,3 +243,41 @@ footer {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
+
+/* ======= Correo ======= */
+.mail-box button,
+.mail-box .btn-mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+/* Botón copiar */
+.mail-box button {
+  background: #0077cc;
+}
+
+.mail-box button:hover {
+  background: #005fa3;
+}
+
+/* Botón enviar */
+.mail-box .btn-mail {
+  background: #e91e63;
+  text-decoration: none;
+}
+
+.mail-box .btn-mail:hover {
+  background: #c2185b;
+}
+
+
+
+/* ======= Tecnologias ======= */
