@@ -1,0 +1,243 @@
+/* ======= GENERAL ======= */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+
+  /* Fondo desenfocado de programación */
+  background-image: url('../img/fondo.png'); 
+  background-size: cover;  
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #222;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ======= HERO ======= */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0077cc20, #e91e6320);
+}
+
+.hero img.profile-pic {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.highlight-blue {
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.highlight-pink {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+/* ======= CONTENIDO GENERAL ======= */
+.content {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ======= GRID DE CARACTERÍSTICAS Y TECNOLOGÍAS ======= */
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;   /* centra verticalmente */
+}
+
+.grid-two ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-two li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive GRID */
+@media (max-width: 768px) {
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Etiquetas de tecnologías */
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tag.ts { background: #7f52ff; }
+.tag.firebase { background: #ffca28; color: #222; }
+.tag.react { background: #2196f3; }
+.tag.astro { background: #4caf50; }
+
+/* ======= PROYECTOS ======= */
+.proyecto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.proyecto-grid .proyecto-img,
+.proyecto-grid .proyecto-texto {
+  flex: 1 1 45%;   /* cada bloque ocupa casi la mitad */
+  min-width: 280px; /* asegura buen aspecto en móvil */
+}
+
+.proyecto-invertido {
+  flex-direction: row-reverse; /* imagen a la derecha */
+}
+
+.proyecto-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  display: block;
+}
+
+.proyecto-texto {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive proyectos */
+@media (max-width: 768px) {
+  .proyecto-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .proyecto-invertido {
+    flex-direction: column; /* evita que se rompa */
+  }
+}
+
+/* ======= CARRUSEL ======= */
+.carousel {
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.slides {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  animation: fade 0.6s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slide p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Botones del carrusel */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.carousel button:hover {
+  background: #eee;
+}
+
+.carousel .prev { left: 5px; }
+.carousel .next { right: 5px; }
+
+@keyframes fade {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* ======= FOOTER ======= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+/* ======= ANIMACIÓN SCROLL ======= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

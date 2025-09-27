@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Libros & Chill - Proyecto</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,9 +12,9 @@
   <header>
     <nav class="navbar">
       <a href="../index.html">🏠 Inicio</a>
-      <a href="#about">Sobre el proyecto</a>
-      <a href="#features">Características</a>
-      <a href="#tech">Tecnologías</a>
+      <a href="#overview">Resumen</a>
+      <a href="#gallery">Galería</a>
+      <a href="#repo">Repositorio</a>
     </nav>
   </header>
 
@@ -26,36 +26,80 @@
       <span class="highlight-blue">Libros & Chill</span> es una 
       <span class="highlight-pink">aplicación Android</span> desarrollada para 
       organizar tu biblioteca personal de forma sencilla y visual.  
-      Con ella nos permite gestionar nuestros libros, añadir nuestra opinion y mantener un registro de nuestras lecturas.
+      Con ella puedes gestionar tus libros, añadir opiniones y mantener un registro de tus lecturas.
     </p>
   </section>
 
-  <!-- Características -->
-  <section id="features" class="content fade-in">
-    <h2>✨ Características principales</h2>
-    <ul>
-      <li>📚 Gestión de libros favorios, leidos y pendientes.</li>
-      <li>📝 Añadir comentarios sobre el libro pudiendo leer los de mas usuarios.</li>
-      <li>🔎 Búsqueda rápida de libros por título o autor.</li>
-      <li>☁️ Integración con <span class="highlight-pink">Firebase</span> para sincronizar datos.</li>
-      <li>☁️ Impementacion de la <span class="highlight-pink">API de Google Books</span> para facilitar la busqueda y añadir libros a nuestra biblioteca.</li>
-      <li>🎨 Interfaz intuitiva y atractiva basada en Material Design.</li>
-    </ul>
-  </section>
+  <!-- Resumen: Características + Tecnologías -->
+  <main class="proyecto-detalle">
+    <section id="overview" class="bloque" data-aos="fade-right" data-aos-delay="100">
+      <div class="container proyecto-grid">
+        <!-- Características -->
+        <div class="proyecto-texto">
+          <h3>✨ Características principales</h3>
+          <ul>
+            <li>📚 Gestión de libros (favoritos, leídos y pendientes).</li>
+            <li>📝 Añadir comentarios y ver los de otros usuarios.</li>
+            <li>🔎 Búsqueda por título o autor.</li>
+            <li>☁️ Sincronización en la nube.</li>
+            <li>🎨 Interfaz intuitiva basada en Material Design.</li>
+          </ul>
+        </div>
 
-  <!-- Tecnologías -->
-  <section id="tech" class="content fade-in">
-    <h2>⚙️ Tecnologías utilizadas</h2>
-    <div class="skills">
-      <span class="tag ts">Kotlin</span>
-      <span class="tag firebase">Firebase</span>
-      <span class="tag react">Material Design</span>
-      <span class="tag astro">API de Libros</span>
-    </div>
-  </section>
+        <!-- Tecnologías -->
+        <div class="proyecto-texto">
+          <h3>⚙️ Tecnologías utilizadas</h3>
+          <ul>
+            <li><span class="tag ts">Kotlin</span> – Lenguaje de desarrollo Android.</li>
+            <li><span class="tag firebase">Firebase</span> – Autenticación y sincronización.</li>
+            <li><span class="tag react">Material Design</span> – Diseño visual y UX.</li>
+            <li><span class="tag astro">Google Books API</span> – Búsqueda de libros.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <!-- Enlace a GitHub -->
-  <section class="content fade-in">
+    <!-- Galería tipo bloques -->
+    <section id="gallery" class="bloque" data-aos="fade-left" data-aos-delay="200">
+      <div class="container proyecto-grid proyecto-invertido">
+        <div class="proyecto-img">
+          <img src="../img/libroschill/loginSingUp.png" alt="Pantalla principal">
+        </div>
+        <div class="proyecto-texto">
+          <h3>Pantalla principal</h3>
+          <p>Muestra la lista de libros guardados, organizados en categorías como leídos, favoritos o pendientes.</p>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section class="bloque" data-aos="fade-left" data-aos-delay="400">
+      <div class="container proyecto-grid proyecto-invertido">
+        <div class="proyecto-img">
+          <img src="../img/libroschill/SingUp.png" alt="Búsqueda de libros">
+        </div>
+        <div class="proyecto-texto">
+          <h3>Búsqueda</h3>
+          <p>Funcionalidad para buscar libros mediante la API de Google Books e incorporarlos a tu biblioteca personal.</p>
+        </div>
+      </div>
+    </section>
+    <section class="bloque" data-aos="fade-left" data-aos-delay="400">
+      <div class="container proyecto-grid proyecto-invertido">
+        <div class="proyecto-img">
+          <img src="../img/libroschill/Login.png" alt="Búsqueda de libros">
+        </div>
+        <div class="proyecto-texto">
+          <h3>Búsqueda</h3>
+          <p>Funcionalidad para buscar libros mediante la API de Google Books e incorporarlos a tu biblioteca personal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Repositorio -->
+  <section id="repo" class="content fade-in">
     <h2>🔗 Repositorio</h2>
     <p>
       Puedes ver el código completo en mi GitHub:  
@@ -68,19 +112,5 @@
   <footer>
     <p>© 2025 Víctor Perea - Proyecto Libros & Chill</p>
   </footer>
-
-  <script>
-    // Animación fade-in al hacer scroll
-    const sections = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
