@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Libros - Proyecto</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html">🏠 Inicio</a>
+      <a href="#about">Sobre el proyecto</a>
+      <a href="#features">Características</a>
+      <a href="#tech">Tecnologías</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="about" class="hero fade-in">
+    <img src="../img/proxmox.jpg" alt="Logo Promox" class="profile-pic">
+    <h1><i class="fa-solid fa-database"></i> Proxmox</h1>
+    <p>
+      Este proyecto consiste en la implementación de un servidor de virtualización utilizando<span class="highlight-blue"> Proxmox VE</span>, con el objetivo
+      de gestionar multiples maquinas virtuales y contenedores desde un unico entorno centralizado.
+        Este proyecto incluye la creacion de maquinas virtuales, configuracion de red y almacenamiento, asi como la puesta
+        en marcha de servicios dentro del entorno virtualizado.
+
+    </p>
+  </section>
+
+<!-- Sección de características y tecnologías -->
+<section id="features-tech" class="content fade-in">
+    <div class="container-flex">
+        <!-- Características -->
+        <div class="feature-box">
+            <h2>✨ Características principales</h2>
+            <ul>
+                <li>🖥️ Creación y gestión de máquinas virtuales (VMs).</li>
+                <li>📦 Uso de contenedores (LXC) para servicios ligeros.</li>
+                <li>🌐 Configuración de red virtual (bridges y NAT).</li>
+                <li>💾 Gestión de almacenamiento y discos virtuales.</li>
+                <li>📊 Monitorización de recursos (CPU, RAM, disco).</li>
+                <li>🚀 Despliegue de servicios virtualizados:</li>
+                <ul>
+                    <li>🗄️ TrueNAS para almacenamiento en red (NAS).</li>
+                    <li>🔐 WireGuard para conexión VPN segura.</li>
+                    <li>🎧 Servidor de TeamSpeak (comunicación por voz).</li>
+                </ul>
+                <li>🔐 Administración centralizada mediante interfaz web.</li>
+            </ul>
+        </div>
+
+        <!-- Tecnologías -->
+        <div class="feature-box">
+            <h2>💻 Tecnologías utilizadas</h2>
+            <ul>
+                <li>Proxmox VE – Plataforma de virtualización</li>
+                <li>Linux (Debian) – Sistema operativo base</li>
+                <li>KVM – Virtualización de máquinas completas</li>
+                <li>LXC – Contenedores ligeros</li>
+                <li>TrueNAS – Gestión de almacenamiento NAS</li>
+                <li>WireGuard – VPN segura</li>
+                <li>Bridge Network – Configuración de red</li>
+                <li>Web Interface – Gestión y monitorización</li>
+            </ul>
+        </div>
+    </div>
+</section>
+    <style>
+.container-flex {
+  display: flex;
+  gap: 40px; /* Espacio entre columnas */
+  justify-content: space-between; /* Para distribuir el espacio */
+  align-items: flex-start; /* Alinea la parte superior de las cajas */
+  flex-wrap: wrap; /* Para que en pantallas pequeñas se acomoden debajo */
+}
+
+.feature-box {
+  flex: 1; /* Cada caja ocupa el mismo espacio */
+  min-width: 250px; /* Evita que se hagan demasiado pequeñas */
+}
+</style>
+  <!-- Enlace a GitHub -->
+  <section class="content fade-in">
+    <h2>🔗 Repositorio</h2>
+    <p>
+      Puedes ver el código completo en mi GitHub:  
+      <a href="https://github.com/tu-usuario/FastLibros" target="_blank">
+        <i class="fa-brands fa-github"></i> Fast Libros
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Víctor Perea - Proyecto Fast Libros</p>
+  </footer>
+
+  <script>
+    // Animación fade-in al hacer scroll
+    const sections = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

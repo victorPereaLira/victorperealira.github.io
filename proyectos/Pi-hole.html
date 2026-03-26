@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Libros - Proyecto</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html">🏠 Inicio</a>
+            <a href="#about">Sobre el proyecto</a>
+            <a href="#features">Características</a>
+            <a href="#tech">Tecnologías</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="about" class="hero fade-in">
+        <img src="../img/pihole-logo.png" alt="Logo Fast Libros" class="profile-pic">
+        <h1><i class="fa-solid fa-database"></i> Pi Hole</h1>
+        <p>
+            <span class="highlight-blue">Pi-hole</span> es un proyecto que consiste en la instalación de un bloqueador
+            de anuncios a nivel de red utilizando un Raspberry Pi.
+            con el objetivo de bloquear publicidad y rastreadores en toda la red domestica. Pi-hole actua como un
+            servidor<span class="highlight-pink"> DNS local</span>, filtrando solicitudes no deseadas y mejorando la
+            velocidad y seguridad de la navegación.
+            El proyecto explica la configuracion y las listas de bloqueo personalizadas, y la integracion con
+            dispositivos de la red.
+        </p>
+    </section>
+
+    <!-- Sección de características y tecnologías -->
+    <section id="features-tech" class="content fade-in">
+        <div class="container-flex">
+            <!-- Características -->
+            <div class="feature-box">
+                <h2>✨ Características principales</h2>
+                <ul>
+                    <li>📂 Registro y gestión de libros con título, autor y categoría.</li>
+                    <li>🔎 Búsqueda rápida de libros.</li>
+                    <li>🗄️ Base de datos integrada para almacenamiento seguro.</li>
+                    <li>🌍 Acceso desde cualquier dispositivo gracias a la interfaz web.</li>
+                </ul>
+            </div>
+
+            <!-- Tecnologías -->
+            <div class="feature-box">
+                <h2>💻 Tecnologías utilizadas</h2>
+                <ul>
+                    <li>Raspberry Pi – Hardware base</li>
+                    <li>Pi-hole – Bloqueo de publicidad DNS</li>
+                    <li>Linux (Raspberry Pi OS) – Sistema operativo</li>
+                    <li>Web Interface – Monitorización y configuración</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <style>
+.container-flex {
+  display: flex;
+  gap: 40px; /* Espacio entre columnas */
+  justify-content: space-between; /* Para distribuir el espacio */
+  align-items: flex-start; /* Alinea la parte superior de las cajas */
+  flex-wrap: wrap; /* Para que en pantallas pequeñas se acomoden debajo */
+}
+
+.feature-box {
+  flex: 1; /* Cada caja ocupa el mismo espacio */
+  min-width: 250px; /* Evita que se hagan demasiado pequeñas */
+}
+</style>
+
+    <!-- Enlace a GitHub -->
+    <section class="content fade-in">
+        
+    </section>
+
+    <footer>
+        <p>© 2026 Víctor Perea - Proyecto Pi-hole</p>
+    </footer>
+
+    <script>
+        // Animación fade-in al hacer scroll
+        const sections = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>
