@@ -345,3 +345,13 @@ footer {
   background: linear-gradient(90deg, #0077cc, #e91e63);
 }
 
+/*diseño de proyectos*/
+.two-columns {
+  display: flex;
+  gap: 2rem;         /* espacio entre columnas */
+  align-items: stretch; /* para que ambas columnas tengan la misma altura */
+}
+
+.two-columns > * {
+  flex: 1;           /* cada columna ocupa el mismo ancho */
+}
