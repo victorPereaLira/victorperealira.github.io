@@ -280,4 +280,68 @@ footer {
 
 
 
-/* ======= Tecnologias ======= */
+/*Animación para el título del héroe*/
+/* ===== CARDS SISTEMAS ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.card-it {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card-it i {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+.card-it:hover {
+  transform: translateY(-5px);
+  background: rgba(0,119,204,0.15);
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  margin-top: 2rem;
+  border-left: 2px solid #0077cc;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item span {
+  position: absolute;
+  left: -30px;
+  background: #0f172a;
+  padding: 5px;
+}
+
+/* ===== SKILLS BARRAS ===== */
+.skill {
+  margin: 15px 0;
+}
+
+.bar {
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.bar div {
+  height: 10px;
+  background: linear-gradient(90deg, #0077cc, #e91e63);
+}
+
