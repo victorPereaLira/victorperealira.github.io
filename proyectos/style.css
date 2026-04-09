@@ -1,39 +1,64 @@
-/* ======= GENERAL ======= */
+/* ============================================================
+   VARIABLES GLOBALES (para mantener consistencia)
+   ============================================================ */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --text-light: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --primary: #0077cc;
+  --primary-dark: #005fa3;
+  --accent: #e91e63;
+  --accent-light: #e91e6320;
+  --navbar-bg: #222;
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* ============================================================
+   ESTILOS BASE
+   ============================================================ */
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--bg-dark);
+  color: var(--text-light);
   line-height: 1.6;
   scroll-behavior: smooth;
 
-  /* Fondo desenfocado de programación */
-  background-image: url('../img/fondo.png'); 
-  background-size: cover;  
+  /* Fondo común (misma imagen que el index) */
+  background-image: url('../img/fondo.png');
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
+/* Títulos centrados por defecto */
 h1, h2, h3 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
+/* Enlaces */
 a {
-  color: #0077cc;
+  color: var(--primary);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--primary-dark);
 }
 
-/* ======= NAVBAR ======= */
+/* ============================================================
+   BARRA DE NAVEGACIÓN
+   ============================================================ */
 .navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  background: #222;
+  background: var(--navbar-bg);
   padding: 1rem;
 }
 
@@ -43,11 +68,13 @@ a:hover {
   font-size: 0.95rem;
 }
 
-/* ======= HERO ======= */
+/* ============================================================
+   SECCIÓN HERO (cabecera del proyecto)
+   ============================================================ */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #0077cc20, #e91e6320);
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--primary)20, var(--accent)20);
 }
 
 .hero img.profile-pic {
@@ -56,35 +83,54 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+/* Textos destacados */
 .highlight-blue {
-  color: #0077cc;
+  color: var(--primary);
   font-weight: bold;
 }
 
 .highlight-pink {
-  color: #e91e63;
+  color: var(--accent);
   font-weight: bold;
 }
 
-/* ======= CONTENIDO GENERAL ======= */
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
 .content {
   padding: 2rem 1rem;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;      /* centrado horizontal */
+  text-align: center;  /* texto centrado por defecto */
 }
 
-/* ======= GRID DE CARACTERÍSTICAS Y TECNOLOGÍAS ======= */
+/* ============================================================
+   GRID DE DOS COLUMNAS (características y tecnologías)
+   ============================================================ */
 .grid-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
   gap: 2rem;
+  justify-content: center; /* centra las columnas */
   margin-top: 2rem;
-  align-items: center;   /* centra verticalmente */
 }
 
+/* Cada columna interna */
+.grid-two > div {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Listas dentro del grid (para que no queden descentradas) */
 .grid-two ul {
   list-style: none;
   padding: 0;
+  text-align: left;     /* mejor legibilidad */
+  margin: 0 auto;
+  max-width: 320px;
 }
 
 .grid-two li {
@@ -93,14 +139,17 @@ a:hover {
   line-height: 1.4;
 }
 
-/* Responsive GRID */
+/* Responsive: en móviles, una columna */
 @media (max-width: 768px) {
   .grid-two {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
-/* Etiquetas de tecnologías */
+/* ============================================================
+   ETIQUETAS DE TECNOLOGÍAS (tags)
+   ============================================================ */
 .tag {
   display: inline-block;
   padding: 4px 8px;
@@ -110,12 +159,15 @@ a:hover {
   color: #fff;
 }
 
-.tag.ts { background: #7f52ff; }
+/* Colores específicos para cada tecnología */
+.tag.ts { background: #7f52ff; }      /* TypeScript */
 .tag.firebase { background: #ffca28; color: #222; }
 .tag.react { background: #2196f3; }
 .tag.astro { background: #4caf50; }
 
-/* ======= PROYECTOS ======= */
+/* ============================================================
+   DISEÑO DE PROYECTOS (texto + imagen, alternando)
+   ============================================================ */
 .proyecto-grid {
   display: flex;
   flex-wrap: wrap;
@@ -126,40 +178,45 @@ a:hover {
 
 .proyecto-grid .proyecto-img,
 .proyecto-grid .proyecto-texto {
-  flex: 1 1 45%;   /* cada bloque ocupa casi la mitad */
-  min-width: 280px; /* asegura buen aspecto en móvil */
+  flex: 1 1 45%;   /* cada bloque ocupa ~45% del ancho */
+  min-width: 280px;
 }
 
+/* Invertir orden (imagen a la derecha) */
 .proyecto-invertido {
-  flex-direction: row-reverse; /* imagen a la derecha */
+  flex-direction: row-reverse;
 }
 
+/* Imagen dentro del proyecto */
 .proyecto-img img {
   width: 100%;
   max-width: 450px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   margin: auto;
   display: block;
 }
 
+/* Texto del proyecto */
 .proyecto-texto {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Responsive proyectos */
+/* Responsive: apilar en móviles */
 @media (max-width: 768px) {
   .proyecto-grid {
     flex-direction: column;
     text-align: center;
   }
   .proyecto-invertido {
-    flex-direction: column; /* evita que se rompa */
+    flex-direction: column; /* evita que se rompa el orden */
   }
 }
 
-/* ======= CARRUSEL ======= */
+/* ============================================================
+   CARRUSEL DE IMÁGENES (para galerías)
+   ============================================================ */
 .carousel {
   position: relative;
   max-width: 500px;
@@ -184,7 +241,7 @@ a:hover {
   width: 100%;
   max-height: 350px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -194,7 +251,7 @@ a:hover {
   color: #555;
 }
 
-/* Botones del carrusel */
+/* Botones del carrusel (prev/next) */
 .carousel button {
   position: absolute;
   top: 50%;
@@ -206,31 +263,40 @@ a:hover {
   padding: 8px 12px;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s;
+  transition: background var(--transition);
 }
 
 .carousel button:hover {
   background: #eee;
 }
 
-.carousel .prev { left: 5px; }
-.carousel .next { right: 5px; }
-
-@keyframes fade {
-  from {opacity: 0.4;}
-  to {opacity: 1;}
+.carousel .prev {
+  left: 5px;
+}
+.carousel .next {
+  right: 5px;
 }
 
-/* ======= FOOTER ======= */
+/* Animación de fade para las transiciones del carrusel */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #222;
+  background: var(--navbar-bg);
   color: #fff;
   font-size: 0.85rem;
 }
 
-/* ======= ANIMACIÓN SCROLL ======= */
+/* ============================================================
+   ANIMACIÓN FADE-IN AL HACER SCROLL
+   ============================================================ */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -241,5 +307,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-

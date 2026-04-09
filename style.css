@@ -1,25 +1,48 @@
-/* Reset */
+/* ============================================================
+   VARIABLES GLOBALES (fáciles de modificar)
+   ============================================================ */
+:root {
+  --bg-dark: #0f172a;        /* Fondo principal */
+  --bg-card: #1e293b;        /* Fondo de tarjetas */
+  --text-light: #e2e8f0;     /* Texto claro */
+  --text-muted: #cbd5e1;     /* Texto secundario */
+  --primary: #38bdf8;        /* Azul principal */
+  --primary-dark: #0ea5e9;   /* Azul hover */
+  --accent: #f472b6;         /* Rosa para destacados */
+  --border-color: #334155;   /* Bordes */
+  --shadow: rgba(56, 189, 248, 0.4);
+  --transition: 0.3s ease;
+}
+
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ============================================================
+   ESTILOS DEL BODY
+   ============================================================ */
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--bg-dark);
+  color: var(--text-light);
   line-height: 1.6;
   scroll-behavior: smooth;
 
-  /* Fondo desenfocado de programación */
-  background-image: url('./img/fondo.png'); 
-  background-size: cover;  
+  /* Fondo de fondo con imagen fija */
+  background-image: url('./img/fondo.png');
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Navbar */
+/* ============================================================
+   BARRA DE NAVEGACIÓN (sticky)
+   ============================================================ */
 header {
   background: rgba(15, 23, 42, 0.9);
   padding: 1rem;
@@ -28,32 +51,37 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar a {
   margin: 0 15px;
   text-decoration: none;
-  color: #cbd5e1;
+  color: var(--text-muted);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color var(--transition);
 }
 
 .navbar a:hover {
-  color: #38bdf8;
+  color: var(--primary);
 }
 
-/* Hero */
+/* ============================================================
+   SECCIÓN HERO (presentación)
+   ============================================================ */
 .hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;    /* menos padding que antes (era 4rem) */
   text-align: center;
-  padding: 4rem 1rem;
 }
 
+/* Foto de perfil */
 .profile-pic {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 3px solid #38bdf8;
+  border: 3px solid var(--primary);
   margin-bottom: 1rem;
   object-fit: cover;
 }
@@ -66,82 +94,94 @@ header {
 
 .hero p {
   font-size: 1.2rem;
-  color: #cbd5e1;
+  color: var(--text-muted);
 }
 
-/* Textos destacados */
+/* Textos con colores destacados */
 .highlight-blue {
-  color: #38bdf8;
+  color: var(--primary);
   font-weight: bold;
 }
 
 .highlight-pink {
-  color: #f472b6;
+  color: var(--accent);
   font-weight: bold;
 }
 
-/* Secciones */
+/* ============================================================
+   SECCIONES GENÉRICAS (content)
+   - Ahora sin conflictos de margin
+   - Espaciado reducido para que queden más pegadas
+   ============================================================ */
 .content {
-  padding: 3rem 10%;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+  padding: 1rem 1rem;        /* antes 1.5rem, ahora más compacto */
+  opacity: 0;                /* para animación fade-in */
+  max-width: 1100px;
+  margin: 0 auto 0.5rem;     /* centrado + margen inferior pequeño */
+  transition: opacity 0.8s ease;
 }
 
+/* Cuando la sección es visible (por el IntersectionObserver) */
 .content.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
+/* Títulos de sección */
 h2 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  color: #38bdf8;
+  color: var(--primary);
 }
 
-/* Proyectos */
+/* ============================================================
+   PROYECTOS (grid de tarjetas)
+   ============================================================ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
+/* Tarjeta genérica para proyectos */
 .card {
-  background: #1e293b;
+  background: var(--bg-card);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
+/* Enlaces dentro de las tarjetas (botones) */
 .card a {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background: #38bdf8;
-  color: #0f172a;
+  background: var(--primary);
+  color: var(--bg-dark);
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
+  transition: background var(--transition), transform 0.2s;
 }
 
 .card a:hover {
-  background: #0ea5e9;
+  background: var(--primary-dark);
   color: #fff;
   transform: scale(1.05);
 }
 
-/* Tags de habilidades */
+/* ============================================================
+   TAGS DE HABILIDADES (no se usan en tu HTML actual, pero los mantengo)
+   ============================================================ */
 .skills, .tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center; /* centra los tags */
+  justify-content: center;
   margin-top: 1rem;
 }
 
@@ -151,19 +191,18 @@ h2 {
   font-size: 0.9rem;
   font-weight: bold;
   color: #fff;
-  border: 1px solid #334155;
-  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
   cursor: default;
 }
 
-/* Hover genérico */
 .tag:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.5);
+  box-shadow: 0 4px 12px var(--shadow);
   filter: brightness(1.1);
 }
 
-/* Colores individuales */
+/* Colores individuales para cada lenguaje/tecnología */
 .tag.html { background-color: #e34c26; }
 .tag.css { background-color: #264de4; }
 .tag.java { background-color: #f89820; }
@@ -175,12 +214,14 @@ h2 {
 .tag.jpa { background-color: #007396; }
 .tag.mysql { background-color: #00758f; }
 
-/* Mail */
+/* ============================================================
+   BLOQUE DE CORREO (con botones copiar/enviar)
+   ============================================================ */
 .mail-box {
   display: flex;
   gap: 10px;
   margin-top: 1rem;
-  background: #1e293b;
+  background: var(--bg-card);
   padding: 0.5rem;
   border-radius: 8px;
   align-items: center;
@@ -190,32 +231,55 @@ h2 {
   flex: 1;
   border: none;
   background: transparent;
-  color: #e2e8f0;
+  color: var(--text-light);
   font-size: 1rem;
 }
 
-.mail-box button {
-  background: #38bdf8;
+/* Estilos comunes para ambos botones del correo */
+.mail-box button,
+.mail-box .btn-mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  font-size: 1.1rem;
+  transition: background var(--transition);
 }
 
+/* Botón copiar */
+.mail-box button {
+  background: #0077cc;
+}
 .mail-box button:hover {
-  background: #0ea5e9;
-  color: #fff;
-  transform: scale(1.05);
+  background: #005fa3;
 }
 
-/* Footer */
+/* Botón enviar (enlace con icono) */
+.mail-box .btn-mail {
+  background: #e91e63;
+  text-decoration: none;
+}
+.mail-box .btn-mail:hover {
+  background: #c2185b;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #1e293b;
-  margin-top: 2rem;
+  background: var(--bg-card);
+  margin-top: 1rem;   /* reducido de 2rem a 1rem */
 }
+
+/* ============================================================
+   ICONOS FLOTANTES (LinkedIn, PDF)
+   ============================================================ */
 .floating-icons {
   position: fixed;
   top: 50%;
@@ -228,14 +292,14 @@ footer {
 }
 
 .floating-icons img {
-  width: 45px;   /* tamaño fijo del icono */
-  height: 45px;  /* tamaño fijo del icono */
-  object-fit: contain; /* ajusta la imagen al tamaño sin deformarla */
-  border-radius: 50%;  /* los hace redondeados */
-  background: #ffffff; /* fondo blanco detrás del icono */
-  padding: 6px;        /* espacio interno */
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow var(--transition);
   cursor: pointer;
 }
 
@@ -244,57 +308,22 @@ footer {
   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
-/* ======= Correo ======= */
-.mail-box button,
-.mail-box .btn-mail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background 0.3s;
-}
-
-/* Botón copiar */
-.mail-box button {
-  background: #0077cc;
-}
-
-.mail-box button:hover {
-  background: #005fa3;
-}
-
-/* Botón enviar */
-.mail-box .btn-mail {
-  background: #e91e63;
-  text-decoration: none;
-}
-
-.mail-box .btn-mail:hover {
-  background: #c2185b;
-}
-
-
-
-/*Animación para el título del héroe*/
-/* ===== CARDS SISTEMAS ===== */
+/* ============================================================
+   CARDS PARA SISTEMAS Y SOPORTE IT
+   ============================================================ */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 2rem;
+  gap: 1rem;          /* antes 20px, unificado a rem */
+  margin-top: 1.5rem; /* reducido de 2rem */
 }
 
 .card-it {
   background: rgba(255,255,255,0.05);
-  padding: 20px;
+  padding: 1.25rem;   /* antes 20px, unificado */
   border-radius: 12px;
   text-align: center;
-  transition: 0.3s;
+  transition: var(--transition);
   backdrop-filter: blur(10px);
 }
 
@@ -309,9 +338,11 @@ footer {
   background: rgba(0,119,204,0.15);
 }
 
-/* ===== TIMELINE ===== */
+/* ============================================================
+   TIMELINE (no usado actualmente en HTML, pero lo conservo)
+   ============================================================ */
 .timeline {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   border-left: 2px solid #0077cc;
   padding-left: 20px;
 }
@@ -324,34 +355,72 @@ footer {
 .timeline-item span {
   position: absolute;
   left: -30px;
-  background: #0f172a;
+  background: var(--bg-dark);
   padding: 5px;
 }
 
-/* ===== SKILLS BARRAS ===== */
+/* ============================================================
+   BARRAS DE PROGRESO PARA SKILLS
+   ============================================================ */
 .skill {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .bar {
-  background: #1e293b;
+  background: var(--bg-card);
+  max-width: 250px;
   border-radius: 20px;
   overflow: hidden;
-  height: 10px;
+  height: 6px;
 }
 
 .bar div {
-  height: 10px;
+  height: 6px;
   background: linear-gradient(90deg, #0077cc, #e91e63);
 }
 
-/*diseño de proyectos*/
+/* ============================================================
+   DISEÑO DE DOS COLUMNAS (para secciones como Habilidades + Sistemas)
+   ============================================================ */
 .two-columns {
   display: flex;
-  gap: 2rem;         /* espacio entre columnas */
-  align-items: stretch; /* para que ambas columnas tengan la misma altura */
+  flex-wrap: nowrap;           /* Fuerza horizontal, no permite salto */
+  gap: 2rem;                   /* Espacio entre columnas */
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;           /* Mismo ancho máximo que otras secciones */
+  margin: 0 auto;              /* Centra el bloque horizontalmente */
 }
 
 .two-columns > * {
-  flex: 1;           /* cada columna ocupa el mismo ancho */
+  flex: 1;                     /* Ambas columnas ocupan el mismo ancho */
+  min-width: 0;                /* Permite que se encojan si es necesario */
+}
+
+/* ============================================================
+   MEDIA QUERY OPCIONAL: para pantallas pequeñas, las dos columnas se apilan
+   ============================================================ */
+@media (max-width: 600px) {
+  .two-columns {
+    flex-direction: column;
+    gap: 0;               /* sin gap vertical porque ya lo dan los márgenes de .content */
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .floating-icons {
+    right: 10px;
+    gap: 10px;
+  }
+  
+  .floating-icons img {
+    width: 35px;
+    height: 35px;
+  }
 }
