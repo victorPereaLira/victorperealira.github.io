@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast Libros - Proyecto</title>
+    <title>Proyecto Pi-hole</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
 </head>
@@ -22,7 +22,7 @@
 
     <!-- Hero -->
     <section id="about" class="hero fade-in">
-        <img src="../img/pihole-logo.png" alt="Logo Fast Libros" class="profile-pic">
+        <img src="../img/pihole-logo.png" alt="Logo Proyecto Pi-hole" class="profile-pic">
         <h1><i class="fa-solid fa-database"></i> Pi Hole</h1>
         <p>
             <span class="highlight-blue">Pi-hole</span> es un proyecto que consiste en la instalación de un bloqueador
@@ -42,10 +42,10 @@
             <div class="feature-box">
                 <h2>✨ Características principales</h2>
                 <ul>
-                    <li>📂 Registro y gestión de libros con título, autor y categoría.</li>
-                    <li>🔎 Búsqueda rápida de libros.</li>
-                    <li>🗄️ Base de datos integrada para almacenamiento seguro.</li>
-                    <li>🌍 Acceso desde cualquier dispositivo gracias a la interfaz web.</li>
+                    <li>🚫 Bloqueo de anuncios a nivel de red.</li>
+                    <li>📊 Monitorización del tráfico DNS en tiempo real.</li>
+                    <li>⚡ Mejora del rendimiento de navegación.</li>
+                    <li>🔒 Mayor privacidad al bloquear rastreadores.</li>
                 </ul>
             </div>
 
@@ -53,33 +53,105 @@
             <div class="feature-box">
                 <h2>💻 Tecnologías utilizadas</h2>
                 <ul>
-                    <li>Raspberry Pi – Hardware base</li>
-                    <li>Pi-hole – Bloqueo de publicidad DNS</li>
-                    <li>Linux (Raspberry Pi OS) – Sistema operativo</li>
-                    <li>Web Interface – Monitorización y configuración</li>
+                    <li>Raspberry Pi</li>
+                    <li>Pi-hole</li>
+                    <li>Raspberry Pi OS Lite</li>
+                    <li>SSH</li>
+                    <li>DNS</li>
                 </ul>
             </div>
         </div>
     </section>
-    <style>
-.container-flex {
-  display: flex;
-  gap: 40px; /* Espacio entre columnas */
-  justify-content: space-between; /* Para distribuir el espacio */
-  align-items: flex-start; /* Alinea la parte superior de las cajas */
-  flex-wrap: wrap; /* Para que en pantallas pequeñas se acomoden debajo */
-}
+    <section id="process" class="content fade-in">
+        <h2>🛠️ Proceso de implementación</h2>
 
-.feature-box {
-  flex: 1; /* Cada caja ocupa el mismo espacio */
-  min-width: 250px; /* Evita que se hagan demasiado pequeñas */
-}
-</style>
+        <p>
+            Este proyecto surgió porque siempre me ha molestado tener que cerrar pop-ups mientras navego por internet.
+            No solo interrumpen la experiencia, sino que también hacen que todo funcione más lento.
+        </p>
 
-    <!-- Enlace a GitHub -->
-    <section class="content fade-in">
-        
+        <p>
+            Como ya tenía una Raspberry Pi en casa, decidí aprovecharla para bloquear los anuncios antes de que llegaran
+            a mis dispositivos. Tras investigar diferentes opciones, elegí Pi-hole por su gran comunidad y facilidad de
+            uso.
+        </p>
+
+        <h3>⚙️ Instalación</h3>
+
+        <p>
+            Para comenzar, instalé <strong>Raspberry Pi OS Lite (32-bit)</strong> utilizando Raspberry Pi Imager,
+            ya que es una opción ligera y sin interfaz gráfica.
+        </p>
+
+        <p>
+            Una vez instalado el sistema, me conecté por SSH para actualizarlo y preparar el entorno.
+        </p>
+
+        <pre><code>sudo apt install curl</code></pre>
+
+        <pre><code>curl -sSL https://install.pi-hole.net | bash</code></pre>
+
+        <p>
+            Durante la instalación, el asistente me permitió configurar:
+        </p>
+
+        <ul>
+            <li>Interfaz de red (eth0)</li>
+            <li>IP estática</li>
+            <li>Proveedor DNS</li>
+            <li>Listas de bloqueo</li>
+        </ul>
+
+        <p>
+            Al finalizar, Pi-hole proporciona un panel web desde el que se puede monitorizar el tráfico
+            y gestionar el sistema de bloqueo.
+        </p>
     </section>
+    <section id="results" class="content fade-in">
+        <h2>📊 Resultados</h2>
+
+        <p>
+            Tras implementar Pi-hole en la red, se observaron mejoras significativas tanto en rendimiento como en
+            privacidad:
+        </p>
+
+        <ul>
+            <li>🚫 Reducción notable de anuncios en todos los dispositivos.</li>
+            <li>⚡ Navegación más rápida al evitar cargas innecesarias.</li>
+            <li>🔒 Bloqueo de dominios asociados a rastreadores.</li>
+            <li>📊 Monitorización en tiempo real del tráfico DNS.</li>
+        </ul>
+
+        <p>
+            Además, el sistema permite visualizar estadísticas como el número de consultas bloqueadas,
+            los dominios más solicitados y el porcentaje de bloqueo total.
+        </p>
+
+        <p>
+            Este proyecto demuestra cómo una solución sencilla puede mejorar significativamente
+            la experiencia de usuario en toda una red doméstica.
+        </p>
+    </section>
+    <style>
+        .container-flex {
+            display: flex;
+            gap: 40px;
+            /* Espacio entre columnas */
+            justify-content: space-between;
+            /* Para distribuir el espacio */
+            align-items: flex-start;
+            /* Alinea la parte superior de las cajas */
+            flex-wrap: wrap;
+            /* Para que en pantallas pequeñas se acomoden debajo */
+        }
+
+        .feature-box {
+            flex: 1;
+            /* Cada caja ocupa el mismo espacio */
+            min-width: 250px;
+            /* Evita que se hagan demasiado pequeñas */
+        }
+    </style>
 
     <footer>
         <p>© 2026 Víctor Perea - Proyecto Pi-hole</p>
