@@ -10,48 +10,45 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
     <header>
         <nav class="navbar">
             <a href="../index.html">🏠 Inicio</a>
             <a href="#about">Sobre el proyecto</a>
-            <a href="#features">Características</a>
-            <a href="#tech">Tecnologías</a>
+            <a href="#process">Proceso</a>
+            <a href="#results">Resultados</a>
         </nav>
     </header>
 
     <!-- Hero -->
     <section id="about" class="hero fade-in">
         <img src="../img/pihole-logo.png" alt="Logo Proyecto Pi-hole" class="profile-pic">
-        <h1><i class="fa-solid fa-database"></i> Pi Hole</h1>
+        <h1><i class="fa-solid fa-database"></i> Pi-hole</h1>
+
         <p>
-            <span class="highlight-blue">Pi-hole</span> es un proyecto que consiste en la instalación de un bloqueador
-            de anuncios a nivel de red utilizando un Raspberry Pi.
-            con el objetivo de bloquear publicidad y rastreadores en toda la red domestica. Pi-hole actua como un
-            servidor<span class="highlight-pink"> DNS local</span>, filtrando solicitudes no deseadas y mejorando la
-            velocidad y seguridad de la navegación.
-            El proyecto explica la configuracion y las listas de bloqueo personalizadas, y la integracion con
-            dispositivos de la red.
+            <span class="highlight-blue">Pi-hole</span> es un bloqueador de anuncios a nivel de red que funciona como
+            servidor <span class="highlight-pink">DNS local</span>. Permite filtrar solicitudes no deseadas antes de que
+            lleguen a los dispositivos, mejorando la velocidad y la privacidad en toda la red doméstica.
         </p>
     </section>
 
-    <!-- Sección de características y tecnologías -->
-    <section id="features-tech" class="content fade-in">
+    <!-- Características + Tecnologías -->
+    <section class="content fade-in">
         <div class="container-flex">
-            <!-- Características -->
+
             <div class="feature-box">
-                <h2>✨ Características principales</h2>
+                <h2>✨ Características</h2>
                 <ul>
-                    <li>🚫 Bloqueo de anuncios a nivel de red.</li>
-                    <li>📊 Monitorización del tráfico DNS en tiempo real.</li>
-                    <li>⚡ Mejora del rendimiento de navegación.</li>
-                    <li>🔒 Mayor privacidad al bloquear rastreadores.</li>
+                    <li>🚫 Bloqueo de anuncios en toda la red</li>
+                    <li>📊 Monitorización DNS en tiempo real</li>
+                    <li>⚡ Mejora del rendimiento</li>
+                    <li>🔒 Bloqueo de rastreadores</li>
                 </ul>
             </div>
 
-            <!-- Tecnologías -->
             <div class="feature-box">
-                <h2>💻 Tecnologías utilizadas</h2>
+                <h2>💻 Tecnologías</h2>
                 <ul>
                     <li>Raspberry Pi</li>
                     <li>Pi-hole</li>
@@ -60,106 +57,96 @@
                     <li>DNS</li>
                 </ul>
             </div>
+
         </div>
     </section>
+
+    <!-- PROCESO -->
     <section id="process" class="content fade-in">
         <h2>🛠️ Proceso de implementación</h2>
 
         <p>
-            Este proyecto surgió porque siempre me ha molestado tener que cerrar pop-ups mientras navego por internet.
-            No solo interrumpen la experiencia, sino que también hacen que todo funcione más lento.
-        </p>
-
-        <p>
-            Como ya tenía una Raspberry Pi en casa, decidí aprovecharla para bloquear los anuncios antes de que llegaran
-            a mis dispositivos. Tras investigar diferentes opciones, elegí Pi-hole por su gran comunidad y facilidad de
-            uso.
+            Este proyecto surgió por la necesidad de eliminar los anuncios y mejorar la experiencia de navegación.
+            Aprovechando una Raspberry Pi, se implementó una solución capaz de bloquear publicidad a nivel de red.
         </p>
 
         <h3>⚙️ Instalación</h3>
 
-        <p>
-            Para comenzar, instalé <strong>Raspberry Pi OS Lite (32-bit)</strong> utilizando Raspberry Pi Imager,
-            ya que es una opción ligera y sin interfaz gráfica.
-        </p>
-
-        <p>
-            Una vez instalado el sistema, me conecté por SSH para actualizarlo y preparar el entorno.
-        </p>
-
         <pre><code>sudo apt install curl</code></pre>
-
         <pre><code>curl -sSL https://install.pi-hole.net | bash</code></pre>
 
-        <p>
-            Durante la instalación, el asistente me permitió configurar:
-        </p>
+        <!-- STEP 1 -->
+        <div class="step">
+            <h4>Selección de interfaz de red</h4>
+            <img src="../img/Pi-hole/Selecion de tarjeta de red.png" class="project-img">
+            <p>Se selecciona la interfaz Ethernet para garantizar estabilidad.</p>
+        </div>
 
-        <ul>
-            <li>Interfaz de red (eth0)</li>
-            <li>IP estática</li>
-            <li>Proveedor DNS</li>
-            <li>Listas de bloqueo</li>
-        </ul>
+        <!-- STEP 2 -->
+        <div class="step">
+            <h4>Configuración DNS</h4>
+            <img src="../img/Pi-hole/Selecion de dns.png" class="project-img">
+            <p>Elección de proveedor DNS durante la instalación.</p>
+        </div>
 
-        <p>
-            Al finalizar, Pi-hole proporciona un panel web desde el que se puede monitorizar el tráfico
-            y gestionar el sistema de bloqueo.
-        </p>
+        <!-- STEP 3 -->
+        <div class="step">
+            <h4>Instalación completada</h4>
+            <img src="../img/Pi-hole/Instalacion de PI-hole.png" class="project-img">
+            <p>Finalización del asistente de instalación.</p>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step">
+            <h4>Acceso al panel</h4>
+            <img src="../img/Pi-hole/loginPihole.png" class="project-img">
+            <p>Panel web para monitorización y control del sistema.</p>
+        </div>
+
     </section>
+
+    <!-- RESULTADOS -->
     <section id="results" class="content fade-in">
         <h2>📊 Resultados</h2>
 
         <p>
-            Tras implementar Pi-hole en la red, se observaron mejoras significativas tanto en rendimiento como en
-            privacidad:
+            Tras implementar Pi-hole, se consiguió mejorar la experiencia de navegación en toda la red doméstica,
+            reduciendo significativamente el número de anuncios y mejorando la velocidad de carga.
         </p>
 
-        <ul>
-            <li>🚫 Reducción notable de anuncios en todos los dispositivos.</li>
-            <li>⚡ Navegación más rápida al evitar cargas innecesarias.</li>
-            <li>🔒 Bloqueo de dominios asociados a rastreadores.</li>
-            <li>📊 Monitorización en tiempo real del tráfico DNS.</li>
-        </ul>
+        <!-- MÉTRICAS -->
+        <div class="stats">
+            <div class="stat">
+                <h3>+70%</h3>
+                <p>Anuncios bloqueados</p>
+            </div>
+            <div class="stat">
+                <h3>+30%</h3>
+                <p>Mejora de rendimiento</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Protección activa</p>
+            </div>
+        </div>
+
+        <img src="../img/Pi-hole/ServicioWeb.png" class="project-img">
 
         <p>
-            Además, el sistema permite visualizar estadísticas como el número de consultas bloqueadas,
-            los dominios más solicitados y el porcentaje de bloqueo total.
-        </p>
-
-        <p>
-            Este proyecto demuestra cómo una solución sencilla puede mejorar significativamente
-            la experiencia de usuario en toda una red doméstica.
+            El panel permite analizar el tráfico, visualizar dominios bloqueados y controlar el comportamiento de la red
+            en tiempo real.
         </p>
     </section>
-    <style>
-        .container-flex {
-            display: flex;
-            gap: 40px;
-            /* Espacio entre columnas */
-            justify-content: space-between;
-            /* Para distribuir el espacio */
-            align-items: flex-start;
-            /* Alinea la parte superior de las cajas */
-            flex-wrap: wrap;
-            /* Para que en pantallas pequeñas se acomoden debajo */
-        }
 
-        .feature-box {
-            flex: 1;
-            /* Cada caja ocupa el mismo espacio */
-            min-width: 250px;
-            /* Evita que se hagan demasiado pequeñas */
-        }
-    </style>
-
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Víctor Perea - Proyecto Pi-hole</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
-        // Animación fade-in al hacer scroll
         const sections = document.querySelectorAll(".fade-in");
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -170,6 +157,7 @@
 
         sections.forEach(section => observer.observe(section));
     </script>
+
 </body>
 
 </html>
