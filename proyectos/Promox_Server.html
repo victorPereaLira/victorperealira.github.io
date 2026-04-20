@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../style.css">
   <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <!-- Navbar -->
   <header>
@@ -23,74 +25,145 @@
     <img src="../img/proxmox.jpg" alt="Logo Promox" class="profile-pic">
     <h1><i class="fa-solid fa-database"></i> Proxmox</h1>
     <p>
-      Este proyecto consiste en la implementación de un servidor de virtualización utilizando<span class="highlight-blue"> Proxmox VE</span>, con el objetivo
+      Este proyecto consiste en la implementación de un servidor de virtualización utilizando<span
+        class="highlight-blue"> Proxmox VE</span>, con el objetivo
       de gestionar multiples maquinas virtuales y contenedores desde un unico entorno centralizado.
-        Este proyecto incluye la creacion de maquinas virtuales, configuracion de red y almacenamiento, asi como la puesta
-        en marcha de servicios dentro del entorno virtualizado.
+      Este proyecto incluye la creacion de maquinas virtuales, configuracion de red y almacenamiento, asi como la puesta
+      en marcha de servicios dentro del entorno virtualizado.
 
     </p>
   </section>
 
-<!-- Sección de características y tecnologías -->
-<section id="features-tech" class="content fade-in">
+  <!-- Sección de características y tecnologías -->
+  <section id="features-tech" class="content fade-in">
     <div class="container-flex">
-        <!-- Características -->
-        <div class="feature-box">
-            <h2>✨ Características principales</h2>
-            <ul>
-                <li>🖥️ Creación y gestión de máquinas virtuales (VMs).</li>
-                <li>📦 Uso de contenedores (LXC) para servicios ligeros.</li>
-                <li>🌐 Configuración de red virtual (bridges y NAT).</li>
-                <li>💾 Gestión de almacenamiento y discos virtuales.</li>
-                <li>📊 Monitorización de recursos (CPU, RAM, disco).</li>
-                <li>🚀 Despliegue de servicios virtualizados:</li>
-                <ul>
-                    <li>🗄️ TrueNAS para almacenamiento en red (NAS).</li>
-                    <li>🔐 WireGuard para conexión VPN segura.</li>
-                    <li>🎧 Servidor de TeamSpeak (comunicación por voz).</li>
-                </ul>
-                <li>🔐 Administración centralizada mediante interfaz web.</li>
-            </ul>
-        </div>
+      <!-- Características -->
+      <div class="feature-box">
+        <h2>✨ Características principales</h2>
+        <ul>
+          <li>🖥️ Creación y gestión de máquinas virtuales (VMs).</li>
+          <li>📦 Uso de contenedores (LXC) para servicios ligeros.</li>
+          <li>🌐 Configuración de red virtual (bridges y NAT).</li>
+          <li>💾 Gestión de almacenamiento y discos virtuales.</li>
+          <li>📊 Monitorización de recursos (CPU, RAM, disco).</li>
+          <li>🚀 Despliegue de servicios virtualizados:</li>
+          <ul>
+            <li>🗄️ TrueNAS para almacenamiento en red (NAS).</li>
+            <li>🔐 WireGuard para conexión VPN segura.</li>
+            <li>🎧 Servidor de TeamSpeak (comunicación por voz).</li>
+          </ul>
+          <li>🔐 Administración centralizada mediante interfaz web.</li>
+        </ul>
+      </div>
 
-        <!-- Tecnologías -->
-        <div class="feature-box">
-            <h2>💻 Tecnologías utilizadas</h2>
-            <ul>
-                <li>Proxmox VE – Plataforma de virtualización</li>
-                <li>Linux (Debian) – Sistema operativo base</li>
-                <li>KVM – Virtualización de máquinas completas</li>
-                <li>LXC – Contenedores ligeros</li>
-                <li>TrueNAS – Gestión de almacenamiento NAS</li>
-                <li>WireGuard – VPN segura</li>
-                <li>Bridge Network – Configuración de red</li>
-                <li>Web Interface – Gestión y monitorización</li>
-            </ul>
-        </div>
+      <!-- Tecnologías -->
+      <div class="feature-box">
+        <h2>💻 Tecnologías utilizadas</h2>
+        <ul>
+          <li>Proxmox VE – Plataforma de virtualización</li>
+          <li>Linux (Debian) – Sistema operativo base</li>
+          <li>KVM – Virtualización de máquinas completas</li>
+          <li>LXC – Contenedores ligeros</li>
+          <li>TrueNAS – Gestión de almacenamiento NAS</li>
+          <li>WireGuard – VPN segura</li>
+          <li>Bridge Network – Configuración de red</li>
+          <li>Web Interface – Gestión y monitorización</li>
+        </ul>
+      </div>
     </div>
-</section>
-    <style>
-.container-flex {
-  display: flex;
-  gap: 40px; /* Espacio entre columnas */
-  justify-content: space-between; /* Para distribuir el espacio */
-  align-items: flex-start; /* Alinea la parte superior de las cajas */
-  flex-wrap: wrap; /* Para que en pantallas pequeñas se acomoden debajo */
-}
-
-.feature-box {
-  flex: 1; /* Cada caja ocupa el mismo espacio */
-  min-width: 250px; /* Evita que se hagan demasiado pequeñas */
-}
-</style>
-  <!-- Enlace a GitHub -->
+  </section>
   <section class="content fade-in">
-    <h2> Proyecto</h2>
+    <h2>📘 Proyecto de Proxmox</h2>
+
+    <h3>Instalación</h3>
+    <p>La instalación de Proxmox VE es bastante simple. Tendremos que descargar la ISO desde la página oficial de
+      Proxmox y montarla en un USB para instalar el sistema operativo en el servidor.</p>
+    <p>La versión que he utilizado es <strong>Proxmox VE 9.1.1</strong>.</p>
+
+    <h3>Proceso de instalación</h3>
+    <p>Una vez preparado el USB, iniciamos el servidor y seguimos el asistente de instalación que es bastante intuitivo.
+      Durante el proceso, configuramos los siguientes aspectos:</p>
+    <ul>
+      <li>Disco de instalación</li>
+      <li>Configuración de red</li>
+      <li>Credenciales</li>
+      <li>Zona horaria</li>
+    </ul>
+    <p>Una vez que ya está instalado, la gestión de Proxmox se realiza desde la interfaz web accediendo a la IP estática
+      que hemos configurado anteriormente. Cuando accedemos por primera vez a la interfaz web nos saldrá la pantalla de
+      inicio de sesión, donde tendremos que poner el usuario y contraseña que configuramos en la instalación. Una vez
+      iniciada sesión, se mostrará un panel similar al de la imagen (en mi caso ya tengo configurados contenedores y
+      máquinas virtuales como se puede observar).</p>
+    <div class="step">
+      <h4>Login Inicial</h4>
+      <p>Login de acceso a la interfaz de Proxmox VE</p>
+      <img src="../img/Proxmox/loginProxmox.png" class="projectPromox">
+    </div>
+    <div class="step">
+      <h4>Panel de Control</h4>
+      <p>Panel de control principal de Proxmox VE, donde se pueden gestionar máquinas virtuales, contenedores y recursos
+        del sistema.</p>
+      <img src="../img/Proxmox/inicioSesionProxmox.png" class="projectPromox">
+    </div>
+    <h3>Servicios Implementados</h3>
+    <p>Los servicios que tengo implementados en Proxmox son:</p>
+    <ul>
+      <li>WireGuard (VPN)</li>
+      <li>DuckDNS (DNS dinámico)</li>
+      <li>Docker</li>
+      <li>TrueNAS</li>
+    </ul>
+    <p>Todos estos servicios están montados en diferentes formas, algunos en contenedores y otros en máquinas virtuales.
+    </p>
+
+    <h4>🔐 WireGuard</h4>
+    <p>WireGuard es un servicio de VPN que permite conectarse de forma segura a la red local desde cualquier lugar. En
+      este proyecto lo he utilizado para poder acceder a todos los servicios de mi red desde fuera de casa, como si
+      estuviera conectado directamente al router. Además, también permite navegar de forma más segura cuando estoy en
+      redes públicas.</p>
+
+    <h4>🦆 DuckDNS</h4>
+    <p>DuckDNS es un servicio de DNS dinámico que permite asociar un dominio a una IP pública que puede cambiar con el
+      tiempo. Lo he configurado para poder acceder a mi red desde el exterior sin necesidad de tener una IP fija, ya que
+      el dominio se actualiza automáticamente cada vez que cambia la IP.</p>
+
+    <h4>🐳 Docker</h4>
+    <p>Docker es una plataforma que permite ejecutar aplicaciones dentro de contenedores. En este proyecto lo he
+      utilizado para desplegar distintos servicios de forma rápida y organizada, sin necesidad de instalar todo
+      directamente en el sistema. Esto facilita mucho la gestión y permite añadir nuevos servicios de forma sencilla.
+    </p>
+
+    <h4>🗄️ TrueNAS</h4>
+    <p>TrueNAS es un sistema operativo orientado al almacenamiento en red (NAS). Lo he utilizado como servidor de
+      almacenamiento para centralizar archivos dentro de la red, permitiendo acceder a ellos desde distintos
+      dispositivos. También se puede utilizar para realizar copias de seguridad.</p>
   </section>
 
+
   <footer>
-    <p>© 2025 Víctor Perea - Proyecto Fast Libros</p>
+    <p>© 2026 Víctor Perea - Proyecto Proxmox</p>
   </footer>
+
+  <style>
+    .container-flex {
+      display: flex;
+      gap: 40px;
+      /* Espacio entre columnas */
+      justify-content: space-between;
+      /* Para distribuir el espacio */
+      align-items: flex-start;
+      /* Alinea la parte superior de las cajas */
+      flex-wrap: wrap;
+      /* Para que en pantallas pequeñas se acomoden debajo */
+    }
+
+    .feature-box {
+      flex: 1;
+      /* Cada caja ocupa el mismo espacio */
+      min-width: 250px;
+      /* Evita que se hagan demasiado pequeñas */
+    }
+  </style>
 
   <script>
     // Animación fade-in al hacer scroll
@@ -106,4 +179,5 @@
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
+
 </html>

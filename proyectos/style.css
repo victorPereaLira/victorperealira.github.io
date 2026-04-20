@@ -400,3 +400,10 @@ section {
   padding: 1.5rem;
   border-radius: var(--border-radius);
 }
+.projectPromox {
+  width: 500px;      /* tamaño */
+  max-width: 100%;   /* responsive móvil */
+  height: auto;      /* mantiene proporción */
+  border-radius: 10px;
+  margin-top: 15px;
+}
