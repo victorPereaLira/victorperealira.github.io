@@ -1,3 +1,7 @@
+<!-- ========================= -->
+<!-- HTML COMPLETO (tu página) -->
+<!-- ========================= -->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,13 +9,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Libros & Chill</title>
+
     <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar">
             <a href="../index.html">🏠 Inicio</a>
@@ -24,18 +30,20 @@
 
     <!-- HERO -->
     <section id="about" class="hero fade-in">
+
         <img src="../img/logoLibrosChill.png" alt="Logo Libros & Chill" class="profile-pic">
 
         <h1><i class="fa-solid fa-book"></i> Libros & Chill</h1>
 
         <p>
-            <span class="highlight-blue">Libros & Chill</span> es una aplicación Android desarrollada para
-            organizar tu biblioteca personal de forma sencilla y visual.
+            <span class="highlight-blue">Libros & Chill</span> es una aplicación Android desarrollada para organizar tu
+            biblioteca personal de forma sencilla y visual.
             Permite gestionar libros, añadir opiniones y llevar un registro de tus lecturas.
         </p>
+
     </section>
 
-    <!-- FEATURES + TECH -->
+    <!-- FEATURES -->
     <section id="features" class="content fade-in">
 
         <div class="container-flex">
@@ -43,7 +51,7 @@
             <div class="feature-box">
                 <h2>✨ Características</h2>
                 <ul>
-                    <li>📚 Gestión de libros (favoritos, leídos y pendientes)</li>
+                    <li>📚 Gestión de libros</li>
                     <li>📝 Comentarios de usuarios</li>
                     <li>🔎 Búsqueda por título o autor</li>
                     <li>☁️ Sincronización en la nube</li>
@@ -54,36 +62,112 @@
             <div class="feature-box">
                 <h2>💻 Tecnologías</h2>
                 <ul>
-                    <li>Kotlin (Android)</li>
-                    <li>Firebase (Auth + DB)</li>
+                    <li>Kotlin</li>
+                    <li>Firebase</li>
                     <li>Material Design</li>
                     <li>Google Books API</li>
                 </ul>
             </div>
 
         </div>
-    </section>
-    <h2>🧠 Desarrollo del proyecto</h2>
-    <p><strong>Libros & Chill</strong> es una aplicación Android desarrollada en Kotlin con el objetivo de facilitar la
-        gestión de una biblioteca personal de libros.
-        El proyecto se centra en la organización, consulta y seguimiento de lecturas de forma sencilla y visual.
-    </p>
-    <p>
-        Durante su desarrollo se utilizó <strong>Firebase</strong> como backend para la autenticación y almacenamiento
-        de datos,
-        junto con la <strong>Google Books API</strong> para obtener información actualizada de los libros.
-        La interfaz fue diseñada siguiendo principios de <strong>Material Design</strong> para ofrecer una experiencia
-        de usuario limpia e intuitiva.
-    </p>
 
-    <p>
-        La aplicación está estructurada en diferentes pantallas que permiten al usuario buscar libros, guardarlos en
-        listas personalizadas y consultar su información detallada.
-    </p>
+    </section>
+
+    <!-- DESARROLLO -->
+    <section class="content fade-in">
+
+        <h2>🧠 Desarrollo del proyecto</h2>
+
+        <p>
+            Libros & Chill fue desarrollado en Kotlin con el objetivo de ofrecer una solución intuitiva para lectores
+            que desean gestionar su biblioteca personal.
+        </p>
+
+        <p>
+            Se utilizó Firebase para autenticación y almacenamiento, junto con Google Books API para obtener información
+            real de libros.
+        </p>
+
+        <p>
+            La aplicación fue diseñada siguiendo Material Design para garantizar una experiencia visual moderna y
+            cómoda.
+        </p>
+
+    </section>
+
+    <!-- GALERÍA -->
     <section id="gallery" class="content fade-in">
 
         <h2>📸 Pantallas del proyecto</h2>
-        
+
+        <div class="gallery-grid">
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Inicial.png" alt="">
+                <div class="card-content">
+                    <h3>Login inicial</h3>
+                    <p>Acceso con inicio de sesión, registro y selector de idioma.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla de Resgistro de usuario.png" alt="">
+                <div class="card-content">
+                    <h3>Registro</h3>
+                    <p>Creación de cuenta integrada con Firebase Authentication.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Inicial usuario.png" alt="">
+                <div class="card-content">
+                    <h3>Inicio usuario</h3>
+                    <p>Recomendaciones personalizadas y navegación principal.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Detalles del libro.png" alt="">
+                <div class="card-content">
+                    <h3>Detalle del libro</h3>
+                    <p>Sinopsis, autor, portada y opción de compra.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Busqueda de libro.png" alt="">
+                <div class="card-content">
+                    <h3>Búsqueda</h3>
+                    <p>Consulta libros por título o autor usando la API.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Usuario favoritos.png" alt="">
+                <div class="card-content">
+                    <h3>Favoritos</h3>
+                    <p>Listado personal de libros favoritos filtrables.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Usuario Leidos.png" alt="">
+                <div class="card-content">
+                    <h3>Leídos</h3>
+                    <p>Historial de libros completados por el usuario.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../img/libroschill/Pantalla Usuario Pendientes.png" alt="">
+                <div class="card-content">
+                    <h3>Pendientes</h3>
+                    <p>Libros guardados para futuras lecturas.</p>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     <!-- FOOTER -->
@@ -91,7 +175,7 @@
         <p>© 2026 Víctor Perea - Proyecto Libros & Chill</p>
     </footer>
 
-    <!-- SCRIPT (igual que tu plantilla Pi-hole) -->
+    <!-- SCRIPT -->
     <script>
         const sections = document.querySelectorAll(".fade-in");
 
