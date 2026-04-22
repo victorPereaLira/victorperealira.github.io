@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Pi-hole</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Pi-hole - Proyecto</title>
+    <link rel="stylesheet" href="./assests/base.css">
+    <link rel="stylesheet" href="./assests/componentes.css">
+    <link rel="stylesheet" href="./assests/pihole.css">
     <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,105 +18,140 @@
         <nav class="navbar">
             <a href="../index.html">🏠 Inicio</a>
             <a href="#about">Sobre el proyecto</a>
-            <a href="#process">Proceso</a>
-            <a href="#results">Resultados</a>
+            <a href="#features-tech">Características</a>
+            <a href="#instalacion">Instalación</a>
+            <a href="#servicios">Servicios</a>
         </nav>
     </header>
 
     <!-- Hero -->
     <section id="about" class="hero fade-in">
-        <img src="../img/pihole-logo.png" alt="Logo Proyecto Pi-hole" class="profile-pic">
-        <h1><i class="fa-solid fa-database"></i> Pi-hole</h1>
-
+        <img src="../img/pihole-logo.png" alt="Logo Pi-hole" class="profile-pic">
+        <h1><i class="fa-solid fa-shield-haltered"></i> Pi-hole</h1>
         <p>
-            <span class="highlight-blue">Pi-hole</span> es un bloqueador de anuncios a nivel de red que funciona como
-            servidor <span class="highlight-pink">DNS local</span>. Permite filtrar solicitudes no deseadas antes de que
-            lleguen a los dispositivos, mejorando la velocidad y la privacidad en toda la red doméstica.
+            Este proyecto consiste en la implementación de un servidor <span class="highlight-blue">Pi-hole</span> en 
+            una <span class="highlight-pink">Raspberry Pi</span>, con el objetivo de bloquear anuncios y rastreadores 
+            a nivel de red. Pi-hole actúa como un servidor DNS local que filtra solicitudes no deseadas antes de que 
+            lleguen a los dispositivos, mejorando la velocidad de navegación y la privacidad en toda la red doméstica.
         </p>
     </section>
 
-    <!-- Características + Tecnologías -->
-    <section class="content fade-in">
+    <!-- Sección de características y tecnologías -->
+    <section id="features-tech" class="content fade-in">
         <div class="container-flex">
-
+            <!-- Características -->
             <div class="feature-box">
-                <h2>✨ Características</h2>
+                <h2>✨ Características principales</h2>
                 <ul>
-                    <li>🚫 Bloqueo de anuncios en toda la red</li>
-                    <li>📊 Monitorización DNS en tiempo real</li>
-                    <li>⚡ Mejora del rendimiento</li>
-                    <li>🔒 Bloqueo de rastreadores</li>
+                    <li>🚫 Bloqueo de anuncios en toda la red.</li>
+                    <li>📊 Monitorización DNS en tiempo real.</li>
+                    <li>⚡ Mejora del rendimiento de navegación.</li>
+                    <li>🔒 Bloqueo de rastreadores y malware.</li>
+                    <li>🌐 Compatible con todos los dispositivos de la red.</li>
+                    <li>📈 Estadísticas detalladas de tráfico DNS.</li>
+                    <li>🛡️ Protección de la privacidad.</li>
+                    <li>🎨 Panel de control web intuitivo.</li>
                 </ul>
             </div>
 
+            <!-- Tecnologías -->
             <div class="feature-box">
-                <h2>💻 Tecnologías</h2>
+                <h2>💻 Tecnologías utilizadas</h2>
                 <ul>
-                    <li>Raspberry Pi</li>
-                    <li>Pi-hole</li>
-                    <li>Raspberry Pi OS Lite</li>
-                    <li>SSH</li>
-                    <li>DNS</li>
+                    <li>Raspberry Pi – Hardware principal</li>
+                    <li>Raspberry Pi OS Lite – Sistema operativo</li>
+                    <li>Pi-hole – Software de bloqueo DNS</li>
+                    <li>DNS – Protocolo de resolución de nombres</li>
+                    <li>SSH – Administración remota</li>
+                    <li>Lighttpd – Servidor web para el panel</li>
+                    <li>FTL – DNS Engine</li>
+                    <li>PHP – Panel de administración</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
-    <!-- PROCESO -->
-    <section id="process" class="content fade-in">
-        <h2>🛠️ Proceso de implementación</h2>
+    <!-- Instalación -->
+    <section id="instalacion" class="content fade-in">
+        <h2>📘 Proyecto de Pi-hole</h2>
 
-        <p>
-            Este proyecto surgió por la necesidad de eliminar los anuncios y mejorar la experiencia de navegación.
-            Aprovechando una Raspberry Pi, se implementó una solución capaz de bloquear publicidad a nivel de red.
-        </p>
+        <h3>Instalación</h3>
+        <p>La instalación de Pi-hole es bastante simple. Lo primero que necesitamos es una Raspberry Pi con Raspberry Pi 
+           OS Lite instalado. Una vez que tenemos el sistema operativo listo, podemos proceder a instalar Pi-hole.</p>
+        <p>La versión que he utilizado es <strong>Pi-hole v5.17.1</strong>.</p>
 
-        <h3>⚙️ Instalación</h3>
+        <h3>Proceso de instalación</h3>
+        <p>Una vez que tenemos la Raspberry Pi configurada y conectada a la red, accedemos por SSH y ejecutamos el 
+           siguiente comando para instalar Pi-hole:</p>
+        
+        <div class="step">
+            <h4>Comando de instalación</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">curl -sSL https://install.pi-hole.net | bash</code></pre>
+            <p>Este comando descarga y ejecuta el script de instalación oficial de Pi-hole.</p>
+        </div>
 
-        <pre><code>sudo apt install curl</code></pre>
-        <pre><code>curl -sSL https://install.pi-hole.net | bash</code></pre>
-
-        <!-- STEP 1 -->
         <div class="step">
             <h4>Selección de interfaz de red</h4>
-            <img src="../img/Pi-hole/Selecion de tarjeta de red.png" class="project-img">
-            <p>Se selecciona la interfaz Ethernet para garantizar estabilidad.</p>
+            <p>Durante la instalación, seleccionamos la interfaz de red que usará Pi-hole (generalmente eth0 o wlan0).</p>
+            <img src="../img/Pi-hole/Selecion de tarjeta de red.png" class="projectPromox" alt="Selección de interfaz de red">
         </div>
 
-        <!-- STEP 2 -->
         <div class="step">
             <h4>Configuración DNS</h4>
-            <img src="../img/Pi-hole/Selecion de dns.png" class="project-img">
-            <p>Elección de proveedor DNS durante la instalación.</p>
+            <p>Elegimos el proveedor DNS que queremos utilizar. Las opciones recomendadas son Cloudflare (1.1.1.1) o Google (8.8.8.8).</p>
+            <img src="../img/Pi-hole/Selecion de dns.png" class="projectPromox" alt="Configuración DNS">
         </div>
 
-        <!-- STEP 3 -->
         <div class="step">
             <h4>Instalación completada</h4>
-            <img src="../img/Pi-hole/Instalacion de PI-hole.png" class="project-img">
-            <p>Finalización del asistente de instalación.</p>
+            <p>Una vez finalizada la instalación, se nos mostrará la contraseña del panel web y la IP de acceso.</p>
+            <img src="../img/Pi-hole/Instalacion de PI-hole.png" class="projectPromox" alt="Instalación completada">
         </div>
 
-        <!-- STEP 4 -->
         <div class="step">
-            <h4>Acceso al panel</h4>
-            <img src="../img/Pi-hole/loginPihole.png" class="project-img">
-            <p>Panel web para monitorización y control del sistema.</p>
+            <h4>Acceso al panel web</h4>
+            <p>Accedemos al panel de control desde cualquier navegador usando la IP de la Raspberry Pi: <strong>http://[IP-RASPBERRY]/admin</strong></p>
+            <img src="../img/Pi-hole/loginPihole.png" class="projectPromox" alt="Login Pi-hole">
         </div>
 
+        <h3>Configuración del router</h3>
+        <p>Para que todos los dispositivos de la red utilicen Pi-hole, debemos configurar el router para que use la IP 
+           de la Raspberry Pi como servidor DNS. De esta forma, todas las consultas DNS pasarán por Pi-hole y serán filtradas.</p>
+
+        <h3>Resultados</h3>
+        <p>Una vez configurado, podemos ver en el panel web las estadísticas de bloqueo. En mi caso, Pi-hole está 
+           bloqueando aproximadamente el 15-20% de las consultas DNS, lo que se traduce en una navegación más limpia 
+           y rápida.</p>
+
+        <div class="step">
+            <h4>Panel de control</h4>
+            <p>Dashboard principal con estadísticas en tiempo real</p>
+            <img src="../img/Pi-hole/ServicioWeb.png" class="projectPromox" alt="Panel de control Pi-hole">
+        </div>
     </section>
 
-    <!-- RESULTADOS -->
-    <section id="results" class="content fade-in">
-        <h2>📊 Resultados</h2>
+    <!-- Servicios Implementados -->
+    <section id="servicios" class="content fade-in">
+        <h3>📊 Estadísticas y monitorización</h3>
+        <p>El panel de Pi-hole nos proporciona información muy útil sobre el tráfico DNS de nuestra red:</p>
+        <ul>
+            <li>Total de consultas DNS realizadas.</li>
+            <li>Porcentaje de consultas bloqueadas.</li>
+            <li>Top dominios más consultados.</li>
+            <li>Top clientes que más consultas realizan.</li>
+            <li>Gráficos temporales de actividad.</li>
+            <li>Lista de dominios bloqueados en tiempo real.</li>
+        </ul>
 
-        <p>
-            Tras implementar Pi-hole, se consiguió mejorar la experiencia de navegación en toda la red doméstica,
-            reduciendo significativamente el número de anuncios y mejorando la velocidad de carga.
-        </p>
+        <h3>🔧 Mantenimiento</h3>
+        <p>Para mantener Pi-hole actualizado, podemos ejecutar los siguientes comandos periódicamente:</p>
+        <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">
+pihole -up     # Actualizar Pi-hole
+pihole -g      # Actualizar listas de bloqueo
+pihole -gp     # Actualizar listas de bloqueo y reiniciar servicio
+        </code></pre>
 
-        <!-- MÉTRICAS -->
+        <!-- Métricas -->
         <div class="stats">
             <div class="stat">
                 <h3>+70%</h3>
@@ -129,24 +166,16 @@
                 <p>Protección activa</p>
             </div>
         </div>
-
-        <img src="../img/Pi-hole/ServicioWeb.png" class="project-img">
-
-        <p>
-            El panel permite analizar el tráfico, visualizar dominios bloqueados y controlar el comportamiento de la red
-            en tiempo real.
-        </p>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
         <p>© 2026 Víctor Perea - Proyecto Pi-hole</p>
     </footer>
 
-    <!-- SCRIPT -->
+    <!-- Script para animaciones -->
     <script>
         const sections = document.querySelectorAll(".fade-in");
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

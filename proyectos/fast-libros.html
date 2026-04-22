@@ -1,90 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fast Libros - Proyecto</title>
-  <link rel="stylesheet" href="../style.css">
-  <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Libros - Proyecto</title>
+    <link rel="stylesheet" href="./assests/base.css">
+    <link rel="stylesheet" href="./assests/componentes.css">
+    <link rel="stylesheet" href="./assests/fastlibros.css">
+    <script src="https://kit.fontawesome.com/2c7fc28a2f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <a href="../index.html">🏠 Inicio</a>
-      <a href="#about">Sobre el proyecto</a>
-      <a href="#features">Características</a>
-      <a href="#tech">Tecnologías</a>
-    </nav>
-  </header>
 
-  <!-- Hero -->
-  <section id="about" class="hero fade-in">
-    <img src="../img/LogoFastLibro.png" alt="Logo Fast Libros" class="profile-pic">
-    <h1><i class="fa-solid fa-database"></i> Fast Libros</h1>
-    <p>
-      <span class="highlight-blue">Fast Libros</span> es una 
-      <span class="highlight-pink">aplicación web</span> desarrollada en Python que permite 
-      <span class="highlight-pink">gestionar tu biblioteca</span> de forma ágil y desde cualquier navegador.  
-      Está pensada para facilitar la organización de colecciones de libros, con una interfaz simple y funcional.  
-    </p>
-  </section>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html">🏠 Inicio</a>
+            <a href="#about">Sobre el proyecto</a>
+            <a href="#features-tech">Características</a>
+            <a href="#instalacion">Instalación</a>
+            <a href="#servicios">Servicios</a>
+        </nav>
+    </header>
 
-  <!-- Características -->
-  <section id="features" class="content fade-in">
-    <h2>✨ Características principales</h2>
-    <ul>
-      <li>📂 Registro y gestión de libros con título, autor y categoría.</li>
-      <li>🔎 Búsqueda rápida de libros.</li>
-      <li>🗄️ Base de datos integrada para almacenamiento seguro.</li>
-      <li>🌍 Acceso desde cualquier dispositivo gracias a la interfaz web.</li>
-    </ul>
-  </section>
+    <!-- Hero -->
+    <section id="about" class="hero fade-in">
+        <img src="../img/LogoFastLibro.png" alt="Logo Fast Libros" class="profile-pic">
+        <h1><i class="fa-solid fa-book"></i> Fast Libros</h1>
+        <p>
+            Este proyecto consiste en el desarrollo de una <span class="highlight-blue">aplicación web</span> llamada 
+            <span class="highlight-pink">Fast Libros</span>, diseñada para gestionar bibliotecas personales de forma 
+            ágil y eficiente. Permite registrar, buscar y organizar libros con una interfaz sencilla y accesible 
+            desde cualquier navegador.
+        </p>
+    </section>
 
-  <!-- Tecnologías -->
-  <section id="tech" class="content fade-in">
-    <h2>⚙️ Tecnologías utilizadas</h2>
-    <div class="skills">
-      <span class="tag js">Python</span>
-      <span class="tag react">Flask</span>
-      <span class="tag astro">SQL</span>
-      <span class="tag tailwind">HTML & CSS</span>
-    </div>
-  </section>
-  <div class="status-bage">
-    🚧 Proyecto en desarrollo activo
-  </div>
-  <p>
-    Apliacion actualmente en fase de evolucion.
-    Se estan implementando nuevas caracteristicas y mejoras en la interfaz para ofrecer una experiencia de usuario más fluida y completa.
-  </p>
-  <!-- Enlace a GitHub -->
-  <section class="content fade-in">
-    <h2>🔗 Repositorio</h2>
-    <p>
-      Puedes ver el código completo en mi GitHub:  
-      <a href="https://github.com/tu-usuario/FastLibros" target="_blank">
-        <i class="fa-brands fa-github"></i> Fast Libros
-      </a>
-    </p>
-  </section>
+    <!-- Sección de características y tecnologías -->
+    <section id="features-tech" class="content fade-in">
+        <div class="container-flex">
+            <!-- Características -->
+            <div class="feature-box">
+                <h2>✨ Características principales</h2>
+                <ul>
+                    <li>📚 Registro y gestión completa de libros.</li>
+                    <li>🔎 Búsqueda rápida por título, autor o categoría.</li>
+                    <li>🗄️ Base de datos integrada para almacenamiento seguro.</li>
+                    <li>🌍 Acceso desde cualquier dispositivo con navegador web.</li>
+                    <li>📖 Organización por categorías y géneros.</li>
+                    <li>⭐ Sistema de valoración de libros.</li>
+                    <li>📊 Estadísticas de lectura.</li>
+                    <li>📱 Diseño responsive adaptable a móviles.</li>
+                </ul>
+            </div>
 
-  <footer>
-    <p>© 2025 Víctor Perea - Proyecto Fast Libros</p>
-  </footer>
+            <!-- Tecnologías -->
+            <div class="feature-box">
+                <h2>💻 Tecnologías utilizadas</h2>
+                <ul>
+                    <li>Python – Lenguaje de programación principal</li>
+                    <li>Flask – Framework web</li>
+                    <li>SQLite / PostgreSQL – Base de datos</li>
+                    <li>HTML5 & CSS3 – Interfaz de usuario</li>
+                    <li>JavaScript – Interactividad</li>
+                    <li>Jinja2 – Motor de plantillas</li>
+                    <li>Bootstrap – Estilos responsive</li>
+                    <li>Git & GitHub – Control de versiones</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Animación fade-in al hacer scroll
-    const sections = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
+    <!-- Instalación y Desarrollo -->
+    <section id="instalacion" class="content fade-in">
+        <h2>📘 Proyecto Fast Libros</h2>
 
-    sections.forEach(section => observer.observe(section));
-  </script>
+        <h3>Instalación</h3>
+        <p>La instalación de Fast Libros es muy sencilla. Solo necesitas tener Python instalado en tu sistema y seguir 
+           estos pasos para poner en marcha la aplicación.</p>
+        <p>La versión actual es <strong>Fast Libros v1.0.0</strong>.</p>
+
+        <h3>Proceso de instalación</h3>
+        <p>Para instalar y ejecutar Fast Libros localmente, sigue estos pasos:</p>
+
+        <div class="step">
+            <h4>1. Clonar el repositorio</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">git clone https://github.com/victorPereaLira/FastLibro.git</code></pre>
+            <p>Clonamos el repositorio desde GitHub a nuestro equipo local.</p>
+        </div>
+
+        <div class="step">
+            <h4>2. Crear entorno virtual</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">python -m venv venv</code></pre>
+            <p>Creamos un entorno virtual para aislar las dependencias del proyecto.</p>
+        </div>
+
+        <div class="step">
+            <h4>3. Activar entorno virtual</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;"># Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate</code></pre>
+            <p>Activamos el entorno virtual según nuestro sistema operativo.</p>
+        </div>
+
+        <div class="step">
+            <h4>4. Instalar dependencias</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">pip install -r requirements.txt</code></pre>
+            <p>Instalamos todas las dependencias necesarias para el proyecto.</p>
+        </div>
+
+        <div class="step">
+            <h4>5. Ejecutar la aplicación</h4>
+            <pre style="background: #0f172a; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code style="color: #38bdf8;">python app.py</code></pre>
+            <p>Iniciamos el servidor y accedemos a <strong>http://localhost:5000</strong> en el navegador.</p>
+        </div>
+    </section>
+
+    <!-- Servicios y Funcionalidades -->
+    <section id="servicios" class="content fade-in">
+        <h3>🔧 Funcionalidades implementadas</h3>
+        <p>Fast Libros ofrece las siguientes funcionalidades para la gestión de bibliotecas:</p>
+        <ul>
+            <li><strong>CRUD completo</strong> de libros (Crear, Leer, Actualizar, Eliminar).</li>
+            <li><strong>Sistema de búsqueda</strong> por título, autor o categoría.</li>
+            <li><strong>Filtros</strong> por género, año o valoración.</li>
+            <li><strong>Base de datos</strong> para almacenar toda la información.</li>
+            <li><strong>Interfaz responsive</strong> que se adapta a móviles y tablets.</li>
+            <li><strong>Exportación de datos</strong> a CSV y PDF.</li>
+            <li><strong>Estadísticas</strong> de lectura y gráficos.</li>
+        </ul>
+
+        <h3>🎨 Diseño y experiencia de usuario</h3>
+        <p>La interfaz de Fast Libros ha sido diseñada pensando en la simplicidad y facilidad de uso. Utiliza colores 
+           suaves y una disposición clara de los elementos para que la gestión de libros sea una tarea agradable.</p>
+
+        <!-- Status Badge -->
+        <div class="project-status">
+            <span class="status-badge">
+                <i class="fa-solid fa-code-branch"></i> Proyecto en desarrollo activo
+            </span>
+        </div>
+
+        <p class="project-note">
+            La aplicación actualmente se encuentra en fase de evolución. Se están implementando nuevas características 
+            y mejoras en la interfaz para ofrecer una experiencia de usuario más fluida y completa.
+        </p>
+
+        <!-- Métricas -->
+        <div class="stats">
+            <div class="stat">
+                <h3>+100</h3>
+                <p>Libros gestionados</p>
+            </div>
+            <div class="stat">
+                <h3>+50</h3>
+                <p>Usuarios activos</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Disponibilidad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repositorio GitHub -->
+    <section class="content fade-in">
+        <h2>🔗 Repositorio</h2>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://github.com/victorPereaLira/FastLibro" target="_blank" class="card" style="display: inline-block; padding: 1rem 2rem;">
+                <i class="fa-brands fa-github" style="font-size: 2rem;"></i>
+                <h3 style="margin-top: 10px;">Ver en GitHub</h3>
+                <p>Repositorio oficial de Fast Libros</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Víctor Perea - Proyecto Fast Libros</p>
+    </footer>
+
+    <!-- Script para animaciones -->
+    <script>
+        const sections = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+
 </body>
+
 </html>

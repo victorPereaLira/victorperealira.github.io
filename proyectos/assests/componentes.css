@@ -1,0 +1,193 @@
+/* BARRA DE NAVEGACIÓN */
+header {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+/* Tarjetas genéricas */
+.card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--bg-dark);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background var(--transition), transform 0.2s;
+}
+
+.card a:hover {
+  background: var(--primary-dark);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Tags */
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+  display: inline-block;
+}
+
+.tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px var(--shadow);
+  filter: brightness(1.1);
+}
+
+.tag.html { background-color: #e34c26; }
+.tag.css { background-color: #264de4; }
+.tag.java { background-color: #f89820; }
+.tag.spring { background-color: #6db33f; }
+.tag.node { background-color: #68a063; }
+.tag.firebase { background-color: #ffca28; color: #000; }
+.tag.git { background-color: #f1502f; }
+.tag.python { background-color: #306998; }
+.tag.ts { background: #7f52ff; }
+.tag.react { background: #2196f3; }
+.tag.astro { background: #4caf50; }
+
+/* Iconos flotantes */
+.floating-icons {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.floating-icons img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.floating-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.slides { position: relative; }
+.slide { display: none; animation: fade 0.6s ease-in-out; }
+.slide.active { display: block; }
+
+.slide img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.carousel .prev { left: 5px; }
+.carousel .next { right: 5px; }
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Grids y layouts comunes */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.two-columns {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.two-columns > * { flex: 1; min-width: 0; }
+
+/* Media queries generales */
+@media (max-width: 600px) {
+  .two-columns { flex-direction: column; gap: 0; }
+  .floating-icons { right: 10px; gap: 10px; }
+  .floating-icons img { width: 35px; height: 35px; }
+}
+
+@media (max-width: 768px) {
+  .grid-two { grid-template-columns: 1fr; gap: 1.5rem; }
+}

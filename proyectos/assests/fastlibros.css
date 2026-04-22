@@ -1,0 +1,179 @@
+/* ============================================================
+   FASTLIBROS - Estilos específicos del proyecto
+   ============================================================ */
+
+.container-flex {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.feature-box ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.feature-box li {
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+/* Grid de proyectos */
+.proyecto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.proyecto-grid .proyecto-img,
+.proyecto-grid .proyecto-texto {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.proyecto-invertido {
+  flex-direction: row-reverse;
+}
+
+.proyecto-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  display: block;
+}
+
+/* Status badge */
+.project-status {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  color: #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.status-badge i {
+  margin-right: 8px;
+}
+
+.project-note {
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* Steps */
+.step {
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.step h4 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.step p {
+  margin-top: 10px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.stat h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Código */
+pre {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+code {
+  color: #38bdf8;
+  font-family: monospace;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .proyecto-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .proyecto-invertido {
+    flex-direction: column;
+  }
+  
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat {
+    min-width: 200px;
+  }
+  
+  .step {
+    margin: 1rem;
+  }
+}

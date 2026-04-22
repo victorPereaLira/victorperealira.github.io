@@ -1,0 +1,136 @@
+/* ============================================================
+   PIHOLE - Estilos específicos del proyecto
+   ============================================================ */
+
+.container-flex {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.feature-box ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.feature-box li {
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.projectPromox {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* Steps o pasos del proceso */
+.step {
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.step h4 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.step p {
+  margin-top: 10px;
+}
+
+/* Estadísticas */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--bg-card-transparent);
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.stat h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Código */
+pre {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+code {
+  color: #38bdf8;
+  font-family: monospace;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Imagen de proyecto */
+.project-img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat {
+    min-width: 200px;
+  }
+  
+  .step {
+    margin: 1rem;
+  }
+}
